@@ -38,7 +38,7 @@ for set_ in (strat_train_set, strat_test_set):
 
 '''
 ==================================================
-VISUALIZE THE DATA [TO COME]
+VISUALIZE THE DATA
 '''
 
 # Use training set only (with labels) for visualizations
@@ -88,7 +88,6 @@ mask = np.zeros_like(correlations, dtype=np.bool)
 mask[np.triu_indices_from(mask)] = True
 sns.heatmap(correlations * 100, annot=True, fmt='.0f', mask=mask, cbar=False)
 plt.show()
-
 
 
 '''
