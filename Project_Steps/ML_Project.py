@@ -51,5 +51,5 @@ PREPARE DATA FOR PREPROCESSING AND ML ALGORITHMS
 '''
 
 # Move labels from training set to own df
-data = strat_train_set.drop('labels', axis=1)
-data_labels = strat_train_set['labels'].copy()
+data = strat_train_set.drop('label', axis=1)
+data_labels = strat_train_set['label'].copy()
