@@ -51,16 +51,29 @@ for col in data.dtypes[data.dtypes == 'object'].index:
     plt.show()
 
 # Numeric Features
+# Boxplots - check for outliers, see stats & distribution split by category
 plt.figure(figsize=(7, 6))
 sns.boxplot(data=data, x='label', y='cat_to_split_on')
 plt.show()
 
+# Violin plot
+sns.violinplot(data=data, x='label', y='cat_to_split_on',
+               hue='metric_to_color_by', split=True)
+plt.show()
+
+# Scatter Matrix
+sns.pairplot(data['cols'], hue='metric_to_color_by', palette='Set2',
+             diag_kind='kde', size=2).map_upper(sns.kdeplot, cmap='Blues_d')
+plt.show()
+
+# Correlation Heatmap
 plt.figure(figsize=(9, 8))
 correlations = data.corr()
 mask = np.zeros_like(correlations, dtype=np.bool)
 mask[np.triu_indices_from(mask)] = True
 sns.heatmap(correlations * 100, annot=True, fmt='.0f', mask=mask, cbar=False)
 plt.show()
+
 
 
 '''
