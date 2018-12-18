@@ -98,3 +98,18 @@ PREPARE DATA FOR PREPROCESSING AND ML ALGORITHMS
 # Move labels from training set to own df
 data = strat_train_set.drop('label', axis=1)
 data_labels = strat_train_set['label'].copy()
+
+
+'''
+==================================================
+SAVE A NUMERIC FEATURE'S STATS TO FILL OR SCALE
+'''
+
+from sklearn.impute import SimpleImputer
+
+imputer = SimpleImputer(strategy="median")
+
+# Remove text attributes, median can only be calculated on numeric columns
+data_num = data.select_dtypes(include=[np.number])
+
+imputer.fit(data_num)
