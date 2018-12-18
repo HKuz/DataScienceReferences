@@ -35,3 +35,21 @@ for train_index, test_index in split.split(data, data['strat_metric']):
 # Drop the column that was used to stratify the data if manufactured
 for set_ in (strat_train_set, strat_test_set):
     set_.drop('strat_metric', axis=1, inplace=True)
+
+'''
+==================================================
+VISUALIZE THE DATA [TO COME]
+'''
+
+# Use training set only (with labels) for visualizations
+data = strat_train_set.copy()
+
+
+'''
+==================================================
+PREPARE DATA FOR PREPROCESSING AND ML ALGORITHMS
+'''
+
+# Move labels from training set to own df
+data = strat_train_set.drop('labels', axis=1)
+data_labels = strat_train_set['labels'].copy()
