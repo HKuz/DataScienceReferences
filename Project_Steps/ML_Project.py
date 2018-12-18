@@ -43,6 +43,24 @@ VISUALIZE THE DATA [TO COME]
 
 # Use training set only (with labels) for visualizations
 data = strat_train_set.copy()
+print(data.describe())
+
+# Categorical Features
+for col in data.dtypes[data.dtypes == 'object'].index:
+    sns.countplot(data=data, y=col)
+    plt.show()
+
+# Numeric Features
+plt.figure(figsize=(7, 6))
+sns.boxplot(data=data, x='label', y='cat_to_split_on')
+plt.show()
+
+plt.figure(figsize=(9, 8))
+correlations = data.corr()
+mask = np.zeros_like(correlations, dtype=np.bool)
+mask[np.triu_indices_from(mask)] = True
+sns.heatmap(correlations * 100, annot=True, fmt='.0f', mask=mask, cbar=False)
+plt.show()
 
 
 '''
