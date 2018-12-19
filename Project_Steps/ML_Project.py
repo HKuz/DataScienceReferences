@@ -27,7 +27,7 @@ SPLIT DATA (RANDOM OR STRATIFIED) INTO TRAINING AND TEST SETS
 # Use one metric to get stratified split
 from sklearn.model_selection import StratifiedShuffleSplit
 
-split = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
+split = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=RANDOM)
 for train_index, test_index in split.split(data, data['strat_metric']):
     strat_train_set = data.loc[train_index]
     strat_test_set = data.loc[test_index]
