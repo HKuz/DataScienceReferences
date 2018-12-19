@@ -67,19 +67,19 @@ sns.pairplot(data['cols'], hue='metric_to_color_by', palette='Set2',
 plt.show()
 
 # Facet grid for scatter plots
-g = sns.FacetGrid(data, col='cat_metric', row='other_cat_metric')
-g.map(sns.regplot, 'other_metric', 'label', fit_reg=False)
-plt.show()
+# g = sns.FacetGrid(data, col='cat_metric', row='other_cat_metric')
+# g.map(sns.regplot, 'other_metric', 'label', fit_reg=False)
+# plt.show()
 
 # Facet grid for histograms - one row
-g = sns.FacetGrid(data, col='cat_metric')
-g.map(sns.distplot, 'label')
-plt.show()
+# g = sns.FacetGrid(data, col='cat_metric')
+# g.map(sns.distplot, 'label')
+# plt.show()
 
 # Facet grid for histograms - multi rows for a categorical value
-g = sns.FacetGrid(data, col='cat_metric', row='other_cat_metric')
-g.map(sns.distplot, 'label')
-plt.show()
+# g = sns.FacetGrid(data, col='cat_metric', row='other_cat_metric')
+# g.map(sns.distplot, 'label')
+# plt.show()
 
 # Correlation Heatmap
 plt.figure(figsize=(9, 8))
