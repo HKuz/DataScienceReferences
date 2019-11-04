@@ -1,12 +1,10 @@
 # Data Science References
 
-A repository for (mostly) plain-English explanations of various topics that fall under the "data science" umbrella.
+A repository for (mostly) plain-English explanations and example code for various topics that fall under the "Data Science" umbrella. Code and write ups are meant to be a personal reference as I learn topics, then explore and test the Python Data Science stack's functionality.
 
-The Jupyter Notebook summaries aren't meant to provide exhaustive coverage on a topic, but only what is relevant or necessary for data science applications. They'll cover:
+** Topics **
 
-- Statististics
-- Linear algebra
-- Calculus
-- Data visualization
-- Machine learning pipeline
-- Machine learning algorithms
+- [Statististics and Probability for Data Science](./Statistics_and_Probability/StatisticsAndProbability.ipynb)
+- [Machine Learning Overview](./Machine_Learning/MachineLearningOverview.ipynb)
+- [Example Data Visualizations and Exploratory Data Analysis](./Visualization_and_EDA/VisualizationsAndEDA.ipynb)
+- [Example Machine Learning Pipeline](./Project_Steps/Full_Pipeline_Example.ipynb)
